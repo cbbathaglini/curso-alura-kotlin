@@ -8,7 +8,7 @@ fun main(){
     val alex = Funcionario("Alex", "111.111.111-11", 1000.0)
     println("Nome: ${alex.nome}")
     println("CPF: ${alex.cpf}")
-    println("Bonificação: ${alex.bonificacao}")
+    println("Bonificação: ${alex.bonificacao()}")
     println(alex)
 
     val mari = Gerente("Mariana", "222.222.222-22", 2000.0,"4321")
@@ -17,13 +17,18 @@ fun main(){
     println("Bonificação: ${mari.bonificacao()}")
     println(mari)
 
-    val gui = Diretor("Mariana", "222.222.222-22", 4000.0, "1234", "200.0")
+    val gui = Diretor("Mariana", "222.222.222-22", 4000.0, "1234", 200.0)
     println("Nome: ${gui.nome}")
     println("CPF: ${gui.cpf}")
     println("Bonificação: ${gui.bonificacao()}")
     println(gui)
 
+    val calculadora = CalculadoraBonificacao()
+    calculadora.registra(alex)
+    calculadora.registra(mari)
+    calculadora.registra(gui)
 
+    println("Total de bonificação: ${calculadora.total}")
 }
 
 
