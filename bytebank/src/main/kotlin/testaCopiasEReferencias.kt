@@ -31,4 +31,8 @@ fun testaCopiasEReferencias(){
     println("Transferindo...")
     contaJoao.transferir(contaMarcos,40.56)
     println("Fim transferência... ori: $contaJoao dst: $contaMarcos")
+
+
+
+    val contaJoaoCorrente = ContaPoupanca(titular = "João", numero = 4444)
 }

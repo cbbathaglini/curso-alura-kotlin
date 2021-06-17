@@ -1,9 +1,9 @@
-class Conta(
+abstract class Conta(
     var titular: String,
     var numero:Int = 0
 ){
     var saldo = 0.0
-        private set(value) {
+        protected set(value) {
             if(value > 0) {
                 field = value
             }
@@ -19,11 +19,8 @@ class Conta(
         this.saldo +=valor; // mexendo no saldo do próprio objeto
     }
 
-    fun sacar(valor:Double){
-        if(this.saldo >= valor) {
-            this.saldo -= valor
-        }
-    }
+
+    abstract fun sacar(valor: Double)
 
     fun transferir(contaDestino: Conta, valor:Double): Boolean{
         if(this.saldo >= valor) {

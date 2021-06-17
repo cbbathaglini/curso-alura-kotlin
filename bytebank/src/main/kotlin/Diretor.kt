@@ -6,9 +6,12 @@ class Diretor(
     val plr: Double
 ): Funcionario(nome = nome, cpf = cpf, salario = salario) {
 
-    override fun bonificacao(): Double {
-        return super.bonificacao() + salario + plr
-    }
+    override val bonificacao: Double
+        get() {
+            println("Bonificação diretor")
+            return (salario * 0.1 ) + salario + plr
+        }
+
 
     override fun toString(): String {
         return "Diretor(nome='$nome', cpf='$cpf', salario=$salario)"
