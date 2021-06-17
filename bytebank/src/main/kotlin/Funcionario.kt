@@ -11,4 +11,11 @@ abstract class Funcionario( // abstract: funcionário não representa algo real,
         return "Funcionario(nome='$nome', cpf='$cpf', salario=$salario)"
     }
 
+//    fun autentica(senha: Int):boolean{
+//        if(this.s == senha){
+//            return true
+//        }
+//        return false
+//    }
+
 }

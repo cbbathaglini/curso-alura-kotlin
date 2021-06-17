@@ -12,25 +12,25 @@ private fun bonificacoes() {
     val alex = Gerente("Alex", "111.111.111-11", 1000.0, "5678")
     println("Nome: ${alex.nome}")
     println("CPF: ${alex.cpf}")
-    println("Bonificação: ${alex.bonificacao()}")
+    println("Bonificação: ${alex.bonificacao}")
     println(alex)
 
     val mari = Gerente("Mariana", "222.222.222-22", 2000.0, "4321")
     println("Nome: ${mari.nome}")
     println("CPF: ${mari.cpf}")
-    println("Bonificação: ${mari.bonificacao()}")
+    println("Bonificação: ${mari.bonificacao}")
     println(mari)
 
     val gui = Diretor("Mariana", "333.333.333-33", 4000.0, "1234", 200.0)
     println("Nome: ${gui.nome}")
     println("CPF: ${gui.cpf}")
-    println("Bonificação: ${gui.bonificacao()}")
+    println("Bonificação: ${gui.bonificacao}")
     println(gui)
 
     val maria = Analista("Maria", "444.444.444-44", 3500.0)
     println("Nome: ${maria.nome}")
     println("CPF: ${maria.cpf}")
-    println("Bonificação: ${maria.bonificacao()}")
+    println("Bonificação: ${maria.bonificacao}")
     println(maria)
 
 

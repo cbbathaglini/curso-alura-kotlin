@@ -1,3 +1,5 @@
+import javax.print.attribute.standard.NumberUp
+
 fun testaCopiasEReferencias(){
     val numeroX = 10
     var numeroY = numeroX
@@ -6,7 +8,7 @@ fun testaCopiasEReferencias(){
     println("X: $numeroX")
     println("Y: $numeroY")
 
-    val contaJoao = Conta(titular = "João")
+    val contaJoao = ContaCorrente(titular = "João", numero = 3421)
     //contaJoao.titular = "João"
     var contaMaria = contaJoao //por referência = mesmo espaço na memória que foi reservado
     contaMaria.titular = "Maria"
@@ -25,7 +27,7 @@ fun testaCopiasEReferencias(){
     contaJoao.sacar(2.89)
     println("Fim saque... $contaJoao")
 
-    val contaMarcos = Conta("Marcos")
+    val contaMarcos = ContaCorrente("Marcos", 9088)
     //contaMarcos.titular = "Marcos"
 
     println("Transferindo...")

@@ -2,8 +2,10 @@ class Gerente  (
     nome: String,
     cpf: String,
     salario: Double,
-    val senha: String
-) : Funcionario(nome = nome, cpf = cpf, salario = salario) {
+    senha: String
+) : FuncionarioAdmin(nome = nome, cpf = cpf, salario = salario, senha = senha),
+Autenticavel{
+
 
     override val bonificacao: Double
         get() {
