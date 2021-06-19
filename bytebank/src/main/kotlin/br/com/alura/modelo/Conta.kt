@@ -1,7 +1,7 @@
 package br.com.alura.modelo
 
 abstract class Conta(
-    var titular: String,
+    var titular: Cliente,
     var numero:Int = 0
 ){
     var saldo = 0.0
@@ -11,7 +11,16 @@ abstract class Conta(
             }
             println("field: $field")
         }
+    companion object{
+        var total = 0
+            private set
+    }
 
+    var total = 0
+
+    init {
+        println("Criando conta...")
+    }
 
     override fun toString(): String {
         return "br.com.alura.modelo.Conta(titular='$titular', numero=$numero, saldo=$saldo)"
@@ -20,7 +29,6 @@ abstract class Conta(
     fun depositar(valor:Double){
         this.saldo +=valor; // mexendo no saldo do próprio objeto
     }
-
 
     abstract fun sacar(valor: Double)
 

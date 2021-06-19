@@ -1,7 +1,7 @@
 package br.com.alura.modelo
 
 class ContaCorrente (
-    titular: String,
+    titular: Cliente,
     numero: Int
 ): Conta(titular = titular, numero = numero) {
 

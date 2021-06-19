@@ -1,14 +1,37 @@
-import br.com.alura.modelo.Cliente
+import br.com.alura.modelo.*
+import java.util.*
 
 // Ctrl + Alt + l : arrumar identação
 
+var totalContas : Int = 0
+
 fun main(){
 
-    val palavra : kotlin.String = ""
+    println("Início main ")
+    funcao1()
+    println("Fim main ")
 
-   //autenticacoes()
+}
 
-    val cliente = Cliente(nome = "Carine", cpf = "000.000.000-00",senha = "!234")
-    val clienteNovo = br.com.alura.modeloAux.Cliente(nome = "CarineAux", cpf = "000.000.000-00",senha = "!2E4")
+fun funcao1(){
+    println("Início funcao 1 ")
+    funcao2()
+    println("Fim funcao 1 ")
+}
+
+fun funcao2(){
+    println("Início funcao 2 ")
+    funcao3()
+    println("Fim funcao 2 ")
+}
+
+
+fun funcao3(){
+    println("Início funcao 3 ")
+
+    for(i in 1..5){
+        println(i)
+    }
+    println("Fim funcao 3 ")
 }
 
