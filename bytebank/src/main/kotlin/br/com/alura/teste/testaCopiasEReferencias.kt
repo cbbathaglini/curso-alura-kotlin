@@ -43,6 +43,9 @@ fun testaCopiasEReferencias(){
     println("Conta titular CPF: ${contaJoao.titular.cpf}")
 
 
+    println("Transferindo...")
+    contaJoao.transferir(contaMarcos,400.56)
+
 
     val contaJoaoCorrente = ContaPoupanca(titular = joao, numero = 4444)
 }

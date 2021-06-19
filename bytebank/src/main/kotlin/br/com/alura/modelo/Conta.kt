@@ -39,7 +39,7 @@ abstract class Conta(
             return true
         }
 
-        return false
+        throw SaldoInsuficienteException()
     }
 
 
