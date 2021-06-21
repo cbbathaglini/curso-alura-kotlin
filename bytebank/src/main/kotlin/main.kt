@@ -17,8 +17,10 @@ fun main(){
     //testesArrays()
     //testesSalariosArrays()
     //testesRange()
-    testesOpAgregacao()
-    testesArraysObjs()
+    //testesOpAgregacao()
+    //testesArraysObjs()
+
+    listarLivros()
 
     println("Fim main ")
 }
