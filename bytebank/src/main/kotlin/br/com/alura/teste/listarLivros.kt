@@ -1,6 +1,7 @@
 package br.com.alura.teste
 
 import br.com.alura.modelo.Livro
+import br.com.alura.modelo.Prateleira
 
 fun listarLivros(){
     val livro1 = Livro(
@@ -77,11 +78,39 @@ fun listarLivros(){
     println("Títulos: " + titulos)
 }
 
+fun listarLivrosComNulos(){
+    listaLivrosComNulos.imprimeComMarcadores()
 
-fun List<Livro>.imprimeComMarcadores(){
-    val join = this.joinToString(separator = "\n"){
-        " - ${it.titulo} de ${it.autor}"
-    }
+    livrosMut
+        .groupBy { it.editora ?: "Editora Desconhecida"}
+        .forEach{ (editora, livros) ->
+            println("$editora: ${livros.joinToString { it.titulo }}")
+        }
+}
+
+fun List<Livro?>.imprimeComMarcadores(){
+//    val join = this
+//        .filter { it != null }
+//        .joinToString(separator = "\n"){
+//        " - ${it?.titulo} de ${it?.autor}" // safe call = só chama o it se não for null
+//    }
+
+    val join = this
+        .filterNotNull()
+        .joinToString(separator = "\n"){
+            " - ${it.titulo} de ${it.autor}" // safe call = só chama o it se não for null
+        }
     println("------------ Lista de Livros --------------\n$join")
+
+}
+
+
+fun testesPrateleiras(){
+    val prateleira = Prateleira(genero = "Literatura", livros = livrosMut)
+    val porAutor = prateleira.organizadorPorAutor() //.imprimeComMarcadores()
+    var porAnoPublicacao = prateleira.organizadorPorAnoPublicacao() //.imprimeComMarcadores()
+
+    porAutor.imprimeComMarcadores()
+    porAnoPublicacao.imprimeComMarcadores()
 
 }

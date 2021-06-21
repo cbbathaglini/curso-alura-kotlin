@@ -20,7 +20,9 @@ fun main(){
     //testesOpAgregacao()
     //testesArraysObjs()
 
-    listarLivros()
+    //listarLivros()
+    //listarLivrosComNulos()
+    testesPrateleiras()
 
     println("Fim main ")
 }

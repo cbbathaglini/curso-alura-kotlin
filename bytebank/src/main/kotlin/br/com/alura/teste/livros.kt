@@ -31,7 +31,7 @@ val livrosMut:MutableList<Livro> = mutableListOf(
         titulo = "LIVRO 15",
         autor = "Autor 15",
         anoPublicacao = 2011,
-        editora = "editora 15"
+
     ),
     Livro(
         titulo = "LIVRO 6",
@@ -43,5 +43,22 @@ val livrosMut:MutableList<Livro> = mutableListOf(
         titulo = "LIVRO 7",
         autor = "Autor 7",
         anoPublicacao = 2019,
+
+    )
+)
+
+val listaLivrosComNulos : MutableList<Livro?> = mutableListOf(
+    null,
+    Livro(
+        titulo = "LIVRO 6",
+        autor = "Autor 6",
+        anoPublicacao = 1951,
+        editora = "editora 6"
+    ),
+    Livro(
+        titulo = "LIVRO 7",
+        autor = "Autor 7",
+        anoPublicacao = 2019,
         editora = "editora 7"
-    ))
+    )
+)
