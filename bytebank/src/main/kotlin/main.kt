@@ -1,7 +1,5 @@
 import br.com.alura.modelo.*
-import br.com.alura.teste.funcao1
-import br.com.alura.teste.testaExcecoes
-import br.com.alura.teste.testeNull
+import br.com.alura.teste.*
 import java.lang.ArithmeticException
 import java.lang.ClassCastException
 import java.lang.NumberFormatException
@@ -14,7 +12,10 @@ fun main(){
 
     println("Início main ")
     //testaCopiasEReferencias()
-    testeNull()
+    //testeNull()
+
+    //testesArrays()
+    testesSalariosArrays()
 
     println("Fim main ")
 }
