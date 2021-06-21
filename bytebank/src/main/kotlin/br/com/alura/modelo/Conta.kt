@@ -1,5 +1,8 @@
 package br.com.alura.modelo
 
+import br.com.alura.exception.FalhaAutenticacaoException
+import br.com.alura.exception.SaldoInsuficienteException
+
 abstract class Conta(
     var titular: Cliente,
     var numero:Int = 0
@@ -32,14 +35,19 @@ abstract class Conta(
 
     abstract fun sacar(valor: Double)
 
-    fun transferir(contaDestino: Conta, valor:Double): Boolean{
+    fun transferir(contaDestino: Conta, valor:Double, senha: String): Boolean{
+
+        if(!this.titular.autentica(senha)){
+            throw FalhaAutenticacaoException(mensagem = "Falha na autenticação")
+        }
+
         if(this.saldo >= valor) {
             this.saldo -= valor
             contaDestino.depositar(valor)
             return true
         }
 
-        throw SaldoInsuficienteException()
+        throw SaldoInsuficienteException(mensagem = "O saldo é insuficiente, saldo atual: $saldo, valor a ser subtraído: $valor")
     }
 
 

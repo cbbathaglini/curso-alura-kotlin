@@ -1,10 +1,7 @@
 package br.com.alura.teste
 
-import br.com.alura.modelo.Conta
-import br.com.alura.modelo.Endereco
-import br.com.alura.modelo.SaldoInsuficienteException
+import br.com.alura.exception.SaldoInsuficienteException
 import java.lang.ArithmeticException
-import java.lang.ClassCastException
 import java.lang.NumberFormatException
 
 

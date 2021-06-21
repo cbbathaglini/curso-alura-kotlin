@@ -1,3 +1,5 @@
+import br.com.alura.exception.FalhaAutenticacaoException
+import br.com.alura.exception.SaldoInsuficienteException
 import br.com.alura.modelo.Cliente
 import br.com.alura.modelo.ContaCorrente
 import br.com.alura.modelo.ContaPoupanca
@@ -36,15 +38,24 @@ fun testaCopiasEReferencias(){
     val contaMarcos = ContaCorrente(marcos, 9088)
     //contaMarcos.titular = "Marcos"
 
-    println("Transferindo...")
-    contaJoao.transferir(contaMarcos,40.56)
-    println("Fim transferência... ori: $contaJoao dst: $contaMarcos")
+    try {
+        println("Transferindo......")
+        contaJoao.transferir(contaMarcos, 40.56, "1")
+        println("Fim transferência... ori: $contaJoao dst: $contaMarcos")
+    }catch (e: SaldoInsuficienteException){
+        println("Falha na transferência...")
+        println("Saldo insuficiente...")
+    }catch (e:FalhaAutenticacaoException){
+        println("Falha na transferência...")
+        println("Falha na autenticação...")
+    }catch (e:Exception){
+        println("Falha na transferência...")
+        e.printStackTrace()
+    }
 
     println("Conta titular CPF: ${contaJoao.titular.cpf}")
-
-
     println("Transferindo...")
-    contaJoao.transferir(contaMarcos,400.56)
+    contaJoao.transferir(contaMarcos,400.56,senha = "1234")
 
 
     val contaJoaoCorrente = ContaPoupanca(titular = joao, numero = 4444)
