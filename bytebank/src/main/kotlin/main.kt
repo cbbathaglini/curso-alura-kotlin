@@ -22,7 +22,13 @@ fun main(){
 
     //listarLivros()
     //listarLivrosComNulos()
-    testesPrateleiras()
+    //testesPrateleiras()
+
+    //testesCollection1()
+    //testesCollection2()
+    //testesCollection3()
+    //testesCollection4()
+    //testesCollection5()
 
     println("Fim main ")
 }
